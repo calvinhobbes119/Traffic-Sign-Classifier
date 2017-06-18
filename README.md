@@ -1,12 +1,17 @@
+
 ## Project: Build a Traffic Sign Recognition Program
 [![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
 
 Data Set
 ---
-In this project, I started with the [German Traffic Sign Dataset](http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset). The dataset consisted of 34799 training images of size 32 x 32 x 3 comprising 43 distinct classes, where each class corresponds to a different traffic sign. The dataset also has 4410 validation samples, and 12630 test samples. I preprocessed the RGB images into grayscale using the [luminosity](https://www.johndcook.com/blog/2009/08/24/algorithms-convert-color-grayscale/) method, and also normalized the values to be between [0,1]. The initial training samples were non-uniformly distributed amongst the various classes. 
+In this project, I started with the [German Traffic Sign Dataset](http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset). The dataset consisted of 34799 training images of size 32 x 32 x 3 comprising 43 distinct classes, where each class corresponds to a different traffic sign. The dataset also has 4410 validation samples, and 12630 test samples. 
+
+I preprocessed the RGB images into grayscale using the [luminosity](https://www.johndcook.com/blog/2009/08/24/algorithms-convert-color-grayscale/) method, and also normalized the values to be between [0,1]. The conversion to grayscale reduces the dimensionality of the data. The conversion to grayscale and normalization reduces variability in the images from non-relevant factors such as lighting and shadows in the training set images. Normalizing all the dimensions equally is also a standard preprocessing step to ensure that the cost function is not dominated by a few dimensions which have larger magnitudes (but possibly lower information for the classification task) at the expense of other more relavant dimensions which may have smaller magnitudes (but contain more relavant information for classification).
+
+The initial training samples were non-uniformly distributed amongst the various classes. This can cause the network weights to become biased towards detection of classes which have more training samples, at the expense of classes which are under-represented.
 ![original dataset](https://github.com/calvinhobbes119/Traffic-Sign-Classifier/blob/master/examples/histogram_original.png)
 
-By random repetition, I augmented the training samples to have approx. 2000 training samples per class.
+For the network to train to a good set of weights that work well for detecting all classes I augmented the training samples to have approx. 2000 training samples per class by random repetition.
 ![augmented dataset](https://github.com/calvinhobbes119/Traffic-Sign-Classifier/blob/master/examples/histogram_augmented.png)
 
 The Network
