@@ -1,4 +1,3 @@
-
 ## Project: Build a Traffic Sign Recognition Program
 [![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
 
@@ -22,7 +21,7 @@ I used the LeNet network architecture with minor changes to the output layer to 
 
 Training, Validation and Testing
 ---
-I trained the network on the augmented dataset using a batch-size of 128 samples, until the accuracy of the network on the validation set was in the range of (0.94, 0.95). I started with a learning rate of 0.001 which seemed to work well - so I did not touch this value. Typically the network accuracy converged to a value of around 0.95 within 50 epochs of training. But on very rare occassions I have to go upto 100 epochs to achive a validation accuracy of 0.95. Once the network achieved the above accuracy on the validation set, the code broke out of the training loop, and the network stopped training. Applying the trained network to the test dataset achieved an accuracy of 0.916. I also validated the network by downloading 5 traffic signs from the web. I specifically selected signs belonging to classes which had a higher representation in the training data. The network was able to correctly classify 4 out of the 5 signs, achieving an accuracy of 0.8.
+I trained the network on the augmented dataset using a batch-size of 128 samples, until the accuracy of the network on the validation set was in the range of (0.94, 0.95). I started with a learning rate of 0.001 which seemed to work well - so I did not touch this value. I used the [Adam optimization](https://arxiv.org/pdf/1412.6980.pdf) routine to train the network. Typically the network accuracy converged to a value of around 0.95 within 50 epochs of training. But on very rare occassions I have to go upto 100 epochs to achive a validation accuracy of 0.95. Once the network achieved the above accuracy on the validation set, the code broke out of the training loop, and the network stopped training. Applying the trained network to the test dataset achieved an accuracy of 0.916. I also validated the network by downloading 5 traffic signs from the web. I specifically selected signs belonging to classes which had a higher representation in the training data. The network was able to correctly classify 4 out of the 5 signs, achieving an accuracy of 0.8.
 
 Future improvements
 ---
