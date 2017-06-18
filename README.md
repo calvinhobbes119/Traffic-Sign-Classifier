@@ -15,22 +15,10 @@ I used the LeNet network architecture with minor changes to the output layer to 
 
 ![LeNet](https://github.com/calvinhobbes119/Traffic-Sign-Classifier/blob/master/examples/LeNet.png)
 
-### Dependencies
-This lab requires:
+Training, Validation and Testing
+---
+I trained the network on the augmented dataset using a batch-size of 128 samples, until the accuracy of the network on the validation set was in the range of (0.94, 0.95). Once the network achieved the above accuracy on the validation set, I stopped training. Applying the trained network to the test dataset achieved an accuracy of 0.916. I also validated the network by downloading 5 traffic signs from the web. I specifically selected signs belonging to classes which had a higher representation in the training data. The network was able to correctly classify 4 out of the 5 signs, achieving an accuracy of 0.8.
 
-* [CarND Term1 Starter Kit](https://github.com/udacity/CarND-Term1-Starter-Kit)
-
-The lab environment can be created with CarND Term1 Starter Kit. Click [here](https://github.com/udacity/CarND-Term1-Starter-Kit/blob/master/README.md) for the details.
-
-### Dataset and Repository
-
-1. Download the data set. The classroom has a link to the data set in the "Project Instructions" content. This is a pickled dataset in which we've already resized the images to 32x32. It contains a training, validation and test set.
-2. Clone the project, which contains the Ipython notebook and the writeup template.
-```sh
-git clone https://github.com/udacity/CarND-Traffic-Sign-Classifier-Project
-cd CarND-Traffic-Sign-Classifier-Project
-jupyter notebook Traffic_Sign_Classifier.ipynb
-```
-
-### Requirements for Submission
-Follow the instructions in the `Traffic_Sign_Classifier.ipynb` notebook and write the project report using the writeup template as a guide, `writeup_template.md`. Submit the project code and writeup document.
+Future improvements
+---
+I plan to experiment more using augmented dataset created from rotations, translations and jitter of the original training samples to make the network more robust. I also plan to improve the network using dropout regularization.
