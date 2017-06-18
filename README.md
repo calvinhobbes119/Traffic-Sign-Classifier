@@ -11,7 +11,7 @@ I preprocessed the RGB images into grayscale using the [luminosity](https://www.
 The initial training samples were non-uniformly distributed amongst the various classes. This can cause the network weights to become biased towards detection of classes which have more training samples, at the expense of classes which are under-represented.
 ![original dataset](https://github.com/calvinhobbes119/Traffic-Sign-Classifier/blob/master/examples/histogram_original.png)
 
-For the network to train to a good set of weights that work well for detecting all classes I augmented the training samples to have approx. 2000 training samples per class by random repetition.
+For the network to train to a good set of weights that work well for detecting all classes I augmented the training samples to have approx. 2000 training samples for each class by random repetition.
 ![augmented dataset](https://github.com/calvinhobbes119/Traffic-Sign-Classifier/blob/master/examples/histogram_augmented.png)
 
 The Network
@@ -22,7 +22,7 @@ I used the LeNet network architecture with minor changes to the output layer to 
 
 Training, Validation and Testing
 ---
-I trained the network on the augmented dataset using a batch-size of 128 samples, until the accuracy of the network on the validation set was in the range of (0.94, 0.95). Once the network achieved the above accuracy on the validation set, I stopped training. Applying the trained network to the test dataset achieved an accuracy of 0.916. I also validated the network by downloading 5 traffic signs from the web. I specifically selected signs belonging to classes which had a higher representation in the training data. The network was able to correctly classify 4 out of the 5 signs, achieving an accuracy of 0.8.
+I trained the network on the augmented dataset using a batch-size of 128 samples, until the accuracy of the network on the validation set was in the range of (0.94, 0.95). Typically the network accuracy converged to a value of around 0.95 within 50 epochs of training. But on very rare occassions I have to go upto 100 epochs to achive a validation accuracy of 0.95. Once the network achieved the above accuracy on the validation set, the network stopped training. Applying the trained network to the test dataset achieved an accuracy of 0.916. I also validated the network by downloading 5 traffic signs from the web. I specifically selected signs belonging to classes which had a higher representation in the training data. The network was able to correctly classify 4 out of the 5 signs, achieving an accuracy of 0.8.
 
 Future improvements
 ---
